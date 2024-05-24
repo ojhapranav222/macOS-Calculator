@@ -13,7 +13,7 @@
     "react": "^18.2.0",
     "react-confetti-explosion": "^2.1.2",
     "react-dom": "^18.2.0",
-    "react-textfit": "^1.1.1"
+    "react-textfit": "alternative-package-or-updated-version"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
