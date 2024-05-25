@@ -7,9 +7,9 @@ export default {
   theme: {
     extend: {
       colors:{
-        dark_grey:'#575755',
+        dark_grey:'#454543',
         light:'#73736E',
-        yellow:'#F0A03A'
+        yellow:'#F0A03A',
       },
       screens: {
       qs: { max: "479px" },
