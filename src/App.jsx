@@ -33,6 +33,7 @@ function App() {
   // Effect to update the document class for theme changes
   useEffect(() => {
     document.documentElement.className = theme;
+    document.body.style.backgroundColor=`${theme==='dark'?'#1a202c':'#f7fafc'}`
   }, [theme]);
 
   // Function to handle button clicks and update data

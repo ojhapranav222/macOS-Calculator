@@ -42,10 +42,13 @@ body {
   
   .container.dark {
     background-color: var(--bg-dark);
+    height: 100vh;
+    
+
   }
   
  .calculator{
-  height: 40vh;
+  height: 30vh;
  }
   .display {
     width: 100%;
@@ -77,7 +80,7 @@ body {
   }
   
   .history h2 {
-    font-size: 24px;
+    font-size: 20px;
     padding: 10px;
     color: var(--text-dark);
     transition: color 0.3s;
