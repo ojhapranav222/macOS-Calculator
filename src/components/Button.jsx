@@ -50,14 +50,14 @@ const Button = ({
   ];
 
   return (
-    <div className=" grid sm:grid-cols-10 grid-cols-10 h-[50vh] w-[100%] sm:w-[70vw] md:w-[60vw] lg:w-[50vw] "> 
+    <div className=" grid  grid-cols-10 md:grid-cols-10 h-[50vh]   w-[100%] sm:w-[70vw] md:w-[60vw] lg:w-[50vw] "> 
       {buttons.map((btn, index) => (
         <button
-          className={`border border-black  text-[12px] font-bold md:font-normal md:text-xl ${theme === 'dark' ? 'bg-dark_grey text-white' : 'bg_white text-white text-sm md:text-md md:text-md'} ${
+          className={`border border-black  text-[12px]   md:font-normal md:text-xl ${theme === 'dark' ? 'bg-dark_grey text-white' : 'bg_white text-white '} ${ 
             index === 16 || index === 17 || index === 18 || index === 26 || index === 27 || index === 28 || index === 36 || index === 37 || index === 38 || index === 46 || index === 47 ? 'bg-light' : ''
           } ${index === 9 || index === 19 || index === 29 || index === 39 || index === 48 ? 'bg-yellow' : ''} ${
             index === 46 ? 'col-span-2' : ''
-          } ${index === 49 ? 'col-span-10' : ''} hover:bg-gray-400 p-2`}
+          } ${index === 49 ? 'col-span-10' : ''} hover:bg-gray-400  `}
           key={index}
           value={btn}
           

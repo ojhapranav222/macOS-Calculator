@@ -251,7 +251,7 @@ function App() {
   return (
     <div className={`container ${theme}  h-screen w-screen overflow-hidden`}>
       <div className="calculator">
-        <Textfit className={`display ${theme==='dark'? 'bg-white':' bg-dark_grey text-white'}`}>{data ? data : '0'}</Textfit>
+        <Textfit className={` display w-[100%] sm:w-[70vw] md:w-[60vw] lg:w-[50vw] ${theme==='dark'? 'bg-white':' bg-dark_grey text-white'}`}>{data ? data : '0'}</Textfit>
         {showConfetti && <Confetti />}
         <Button
           handleButton={handleButton}
@@ -292,9 +292,9 @@ function App() {
           theme={theme}
         />
       </div>
-      <div className="history">
-        <h2 className={`${theme==="light"?'dark':''}`}>History</h2>
-        <ul>
+      <div className="history relative overflow-x-hidden">
+        <h2 className={`${theme==="light"?'dark':' fixed z-10'}`}>History</h2>
+        <ul className="   absolute top-10  left-2">
           {history.map((item, index) => (
             <li key={index}>{item}</li>
           ))}

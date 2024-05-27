@@ -49,14 +49,16 @@ body {
   
  .calculator{
   height: 30vh;
+  
  }
   .display {
-    width: 100%;
+     width: 50vw;
     height: 80px;
     text-align: right;
     padding: 10px;
     border: 1px solid;
     border-radius: 5px;
+
     
     background-color: var(--bg-light);
     color: var(--text-dark);
