@@ -1,11 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 /* App.css */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-    margin: 0;
-  background-color: #1a202c;
+   
+  
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
+ 
+  
  
   }
   
@@ -19,15 +26,16 @@ body {
   .container {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    
     justify-content: center;
-    padding: 10px;
-    height: 100vh;
+    padding-top: 10px;
+    
     background-color: var(--bg-light);
     transition: background-color 0.3s;
-    width: 100%;
+   
     
-    margin-top: 10px;
+    
+    
     
     
   }
@@ -36,14 +44,9 @@ body {
     background-color: var(--bg-dark);
   }
   
-  .calculator {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 740px;
-  }
-  
+ .calculator{
+  height: 40vh;
+ }
   .display {
     width: 100%;
     height: 80px;
@@ -68,9 +71,9 @@ body {
     align-items: center;
     width: 100%;
     max-width: 300px;
-    
+    margin-left: 20px;
     overflow-x: auto;
-    margin-top: 10px;
+    
   }
   
   .history h2 {
@@ -102,19 +105,16 @@ body {
   /* Grid layout for buttons */
   .custom_grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    width: 50vw;
+    height: 50vh;
+   
     
   }
   
-  button {
-    border: 1px solid #000;
-    padding: 15px;
 
-    font-size: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    
-  }
+  
+  
+ 
   
   .bg-dark_grey {
     background-color: #2d3748;

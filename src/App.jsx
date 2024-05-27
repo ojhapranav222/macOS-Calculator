@@ -248,7 +248,7 @@ function App() {
   }
 
   return (
-    <div className={`container ${theme}`}>
+    <div className={`container ${theme}  h-screen w-screen overflow-hidden`}>
       <div className="calculator">
         <Textfit className={`display ${theme==='dark'? 'bg-white':' bg-dark_grey text-white'}`}>{data ? data : '0'}</Textfit>
         {showConfetti && <Confetti />}
