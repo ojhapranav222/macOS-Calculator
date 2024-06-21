@@ -8,7 +8,7 @@
    cd macOS-Scientific-Calculator
 2. Install dependencies: 
    ```bash
-    npm install
+    npm install --force
 3. Run the project:
    ```bash
     npm run dev
