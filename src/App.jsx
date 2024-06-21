@@ -1,9 +1,10 @@
 // Importing necessary dependencies from React and other packages
 import React, { useState, useEffect } from "react";
 import Button from "./components/Button"; // Custom Button component
-import Confetti from "react-confetti-explosion"; // Confetti effect for celebrations
+import Confetti from "./components/Confetti"; // Confetti effect for celebrations
 import "./App.css"; // Importing CSS for styling
 import { Textfit } from "react-textfit"; // Text fitting component for dynamic font size
+import ConfettiExplosion from "react-confetti-explosion";
 
 function App() {
   // State for the current input data of the calculator
@@ -20,15 +21,6 @@ function App() {
   const [theme, setTheme] = useState("light");
   // State to store the history of calculations
   const [history, setHistory] = useState([]);
-
-  // Effect to show confetti when the data contains both 3 and 4
-  useEffect(() => {
-    const regex = /\b3\b.*\b4\b|\b4\b.*\b3\b/;
-    if (regex.test(data)) {
-      setShowConfetti(true);
-      setTimeout(() => setShowConfetti(false), 3000);
-    }
-  }, [data]);
 
   // Effect to update the document class for theme changes
   useEffect(() => {
@@ -47,6 +39,12 @@ function App() {
       const result = eval(data).toString();
       setHistory([...history, `${data} = ${result}`]);
       setData(result);
+      // Effect to show confetti when the data contains both 5 and 6
+      const regex = /\b5\b.*\b6\b|\b6\b.*\b5\b/;
+      if (regex.test(data)) {
+        setShowConfetti(true);
+        setTimeout(() => setShowConfetti(false), 3000);
+      }
     } catch (error) {
       setData("Error");
     }
@@ -248,11 +246,24 @@ function App() {
     setTheme(theme === "light" ? "dark" : "light");
   }
 
+  //Handling Confetti
+  function handleConfetti(){
+
+  }
+
   return (
-    <div className={`container ${theme}  h-screen w-screen overflow-hidden`}>
+    <div className={`container ${theme}`}>
+      {showConfetti && <ConfettiExplosion
+          onComplete={() => setShowConfetti(false)}
+          particleCount={400}
+          particleSize={18}
+          zIndex={2}
+          force={1}
+          duration={3000}
+          className="confetti"
+        />}
       <div className="calculator">
-        <Textfit className={` display w-[100%] sm:w-[70vw] md:w-[60vw] lg:w-[50vw] ${theme==='dark'? 'bg-white':' bg-dark_grey text-white'}`}>{data ? data : '0'}</Textfit>
-        {showConfetti && <Confetti />}
+        <Textfit className={`textDisplay ${theme==='dark'? 'dark':'light'}`}>{data ? data : '0'}</Textfit>
         <Button
           handleButton={handleButton}
           calculation={calculation}
@@ -290,13 +301,14 @@ function App() {
           toggleRadDeg={toggleRadDeg}
           toggleTheme={toggleTheme}
           theme={theme}
+          className = {`btn ${theme==='dark'? 'dark':'light'}`}
         />
       </div>
-      <div className="history relative overflow-x-hidden">
-        <h2 className={`${theme==="light"?'dark':' fixed z-10'}`}>History</h2>
-        <ul className="   absolute top-10  left-2">
+      <div className="history">
+        <h2 className={`${theme==="light"?'dark':' light'}`}>History</h2>
+        <ul>
           {history.map((item, index) => (
-            <li key={index}>{item}</li>
+            <li key={index} className={`${theme === "dark" ? "dark" : "light"}`}> {item}</li>
           ))}
         </ul>
       </div>
