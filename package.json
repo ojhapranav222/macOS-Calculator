@@ -10,9 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^15.6.2",
-    "react-dom": "^15.6.2",
-    "react-confetti-explosion": "^1.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-confetti-explosion": "^2.1.2",
     "react-textfit": "^1.1.1"
   },
   "devDependencies": {

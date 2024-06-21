@@ -1,7 +1,6 @@
 // Importing necessary dependencies from React and other packages
 import React, { useState, useEffect } from "react";
 import Button from "./components/Button"; // Custom Button component
-import Confetti from "./components/Confetti"; // Confetti effect for celebrations
 import "./App.css"; // Importing CSS for styling
 import { Textfit } from "react-textfit"; // Text fitting component for dynamic font size
 import ConfettiExplosion from "react-confetti-explosion";
