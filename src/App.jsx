@@ -1,8 +1,8 @@
 // Importing necessary dependencies from React and other packages
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Button from "./components/Button"; // Custom Button component
 import "./App.css"; // Importing CSS for styling
-import { Textfit } from "react-textfit"; // Text fitting component for dynamic font size
+import fitty from "fitty"; // Text fitting component for dynamic font size
 import ConfettiExplosion from "react-confetti-explosion";
 
 function App() {
@@ -21,11 +21,22 @@ function App() {
   // State to store the history of calculations
   const [history, setHistory] = useState([]);
 
+  const displayRef = useRef(null);
   // Effect to update the document class for theme changes
   useEffect(() => {
     document.documentElement.className = theme;
     document.body.style.backgroundColor=`${theme==='dark'?'#1a202c':'#f7fafc'}`
   }, [theme]);
+
+  useEffect(() => {
+    if (displayRef.current){
+      fitty(displayRef.current, {
+        maxSize: 80,
+        minSize: 20,
+      });
+        }
+      }, [data]);
+      
 
   // Function to handle button clicks and update data
   function handleButton(e) {
@@ -245,11 +256,6 @@ function App() {
     setTheme(theme === "light" ? "dark" : "light");
   }
 
-  //Handling Confetti
-  function handleConfetti(){
-
-  }
-
   return (
     <div className={`container ${theme}`}>
       {showConfetti && <ConfettiExplosion
@@ -262,7 +268,7 @@ function App() {
           className="confetti"
         />}
       <div className="calculator">
-        <Textfit className={`textDisplay ${theme==='dark'? 'dark':'light'}`}>{data ? data : '0'}</Textfit>
+        <div className={`textDisplay ${theme==='dark'? 'dark':'light'}`} ref={displayRef}>{data ? data : '0'}</div>
         <Button
           handleButton={handleButton}
           calculation={calculation}

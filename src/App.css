@@ -143,6 +143,8 @@ body {
     justify-content: flex-end;
     align-items: center;
     height: 100px;
+    width: 100%;
+    text-align: right;
     color: #e0e0e0;
     font-size: 1.25rem;
     padding-right: 10px;
